@@ -61,3 +61,18 @@ a.navbar-item:hover {
     color: #485fc7;
     border-bottom-color: #485fc7;
 }
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        .tabs li a {
+            border-bottom-color: #696969;
+        }
+        .tabs li.is-active a {
+            color: #7585ff;
+            border-bottom-color: #7585ff;
+        }
+        .text {
+            fill: #ebecf0
+        }
+    }
+}
