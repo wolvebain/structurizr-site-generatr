@@ -6,8 +6,6 @@ import nl.avisi.structurizr.site.generatr.site.model.PageViewModel
 
 fun HTML.page(viewModel: PageViewModel, block: DIV.() -> Unit) {
     attributes["lang"] = "en"
-    attributes["data-theme"] = "light"
-    classes = setOf("has-background-light")
 
     headFragment(viewModel)
     bodyFragment(viewModel, block)
@@ -15,6 +13,7 @@ fun HTML.page(viewModel: PageViewModel, block: DIV.() -> Unit) {
 
 private fun HTML.headFragment(viewModel: PageViewModel) {
     head {
+        script(type = ScriptType.textJavaScript, src = "/is-color-scheme-light.js") { }
         meta(charset = "utf-8")
         meta(name = "viewport", content = "width=device-width, initial-scale=1")
         title { +viewModel.pageTitle }
@@ -59,7 +58,7 @@ private fun HTML.bodyFragment(viewModel: PageViewModel, block: DIV.() -> Unit) {
         div(classes = "site-layout") {
             id = "site"
             menu(viewModel.menu, viewModel.includeTreeview)
-            div(classes = "container is-fluid has-background-white") {
+            div(classes = "container is-fluid") {
                 block()
             }
         }

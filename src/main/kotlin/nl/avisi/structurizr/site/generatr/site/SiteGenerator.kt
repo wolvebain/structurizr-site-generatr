@@ -27,6 +27,7 @@ fun copySiteWideAssets(exportDir: File) {
     copySiteWideAsset(exportDir, "/css/treeview.css")
     copySiteWideAsset(exportDir, "/js/treeview.js")
     copySiteWideAsset(exportDir, "/js/katex-render.js")
+    copySiteWideAsset(exportDir, "/js/is-color-scheme-light.js")
 }
 
 private fun copySiteWideAsset(exportDir: File, asset: String) {
